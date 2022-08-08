@@ -64,6 +64,10 @@ const deleteRecord = async () => {
   delID.value = null;
 };
 
+const imagePath = (name) => {
+  return `${import.meta.env.VITE_API_URL}/images/${name}`;
+};
+
 onBeforeMount(() => fetchRecords());
 </script>
 
@@ -111,6 +115,7 @@ onBeforeMount(() => fetchRecords());
         <table>
           <thead>
             <th>UID</th>
+            <th>Image</th>
             <th>Firstname</th>
             <th>Middlename</th>
             <th>Lastname</th>
@@ -121,6 +126,13 @@ onBeforeMount(() => fetchRecords());
           <tbody>
             <tr v-for="student in records" :key="student._id">
               <td>{{ student._id }}</td>
+              <td>
+                <img
+                  class="w-14 h-14"
+                  :src="imagePath(student.image)"
+                  :alt="student.firstname"
+                />
+              </td>
               <td>{{ student.firstname }}</td>
               <td>{{ student.middlename }}</td>
               <td>{{ student.lastname }}</td>
