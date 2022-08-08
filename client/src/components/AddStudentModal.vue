@@ -7,6 +7,7 @@ import LoadingSpinner from "./Loader.vue";
 
 const { emit } = getCurrentInstance();
 const store = useStore();
+const stdImage = ref(null);
 const fnameRef = ref(null);
 const mnameRef = ref(null);
 const lnameRef = ref(null);
@@ -32,16 +33,23 @@ const submit = async () => {
     course,
     section,
   });
+  console.log(stdImage.value.files[0]);
+  const formdata = new FormData();
+  formdata.append("firstname", fname);
+  formdata.append("middlename", mname);
+  formdata.append("lastname", lname);
+  formdata.append("course", course);
+  formdata.append("section", section);
+  formdata.append("image", stdImage.value.files[0]);
 
   loading.value = true;
   try {
     const res = await fetch(`${apiBase}/student`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         "access-token": accessToken,
       },
-      body,
+      body: formdata,
     });
 
     const data = await res.json();
@@ -80,6 +88,7 @@ const validateEmptyInputs = (...inputs) => {
       <h1 class="text-red-700 text-3xl text-center font-bold my-2">
         New Student
       </h1>
+      <input ref="stdImage" type="file" name="image" id="std-image" />
       <input
         ref="fnameRef"
         type="text"
