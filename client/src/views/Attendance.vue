@@ -76,7 +76,9 @@ onBeforeMount(() => fetchRecords());
       </h1>
 
       <!-- Search field -->
-      <fieldset class="border border-solid border-gray-300 p-3">
+      <fieldset
+        class="border border-solid border-gray-300 p-3 flex justify-between"
+      >
         <legend>Search</legend>
 
         <!-- Searchbox -->
@@ -90,6 +92,29 @@ onBeforeMount(() => fetchRecords());
         </div>
 
         <!-- Filter section -->
+        <div class="flex items-center gap-2">
+          <span>Filter Date</span>
+          <input
+            type="date"
+            class="
+              bg-gray-50
+              border border-gray-300
+              text-gray-900
+              sm:text-sm
+              rounded-lg
+              focus:ring-blue-500 focus:border-blue-500
+              block
+              pl-10
+              p-2.5
+              dark:bg-gray-700
+              dark:border-gray-600
+              dark:placeholder-gray-400
+              dark:text-white
+              dark:focus:ring-blue-500
+              dark:focus:border-blue-500
+            "
+          />
+        </div>
       </fieldset>
 
       <div class="center hidden">
