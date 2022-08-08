@@ -2,6 +2,10 @@ import { Request, Response } from "express";
 import Student from "../models/student.model";
 import Time from "../models/time.model";
 
+interface ImageReq extends Request {
+  image?: string;
+}
+
 module.exports = {
   // GET ALL DATA
   getAll: async (req: Request, res: Response) => {
@@ -14,8 +18,11 @@ module.exports = {
     res.send(student);
   },
   // CREATE DATA
-  createOne: async (req: Request, res: Response) => {
+  createOne: async (req: any, res: Response) => {
+    console.log(req.image);
     const newStudent = new Student(req.body);
+    newStudent.image = req.image;
+
     await newStudent.save();
     res.send(newStudent);
   },
