@@ -16,16 +16,16 @@
 <style scoped>
 @keyframes ldio-0jqjdf0wmaan {
   0% {
-    background: #fffb16;
+    background: #870400;
   }
   12.5% {
-    background: #fffb16;
+    background: #870400;
   }
   12.625% {
-    background: #870400;
+    background: #1e5bae;
   }
   100% {
-    background: #870400;
+    background: #1e5bae;
   }
 }
 .loadingio-spinner-blocks-qu4b56uwsp {
@@ -44,7 +44,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  background: #870400;
+  background: #1e5bae;
   animation: ldio-0jqjdf0wmaan 1s linear infinite;
 }
 .ldio-0jqjdf0wmaan {
