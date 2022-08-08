@@ -4,13 +4,15 @@
 <template>
   <div class="main-container center min-h-screen">
     <div class="cont flex flex-col gap-2 bg-gray-50 p-4 rounded">
-      <h1 class="text-center font-bold text-2xl text-blue-700">ISCP</h1>
+      <h1 class="text-center font-bold text-2xl text-blue-700">
+        International State College of the Philippines
+      </h1>
       <h1 class="text-center font-bold text-2xl text-blue-700">
         Student Attendance System
       </h1>
 
       <img
-        class="w-28 m-auto"
+        class="w-36 m-auto my-4"
         src="../assets/school.png"
         alt="Shrewsbury International School"
       />
@@ -25,6 +27,7 @@
             text-white
             rounded
             w-full
+            my-2
           "
         >
           Admin Login
