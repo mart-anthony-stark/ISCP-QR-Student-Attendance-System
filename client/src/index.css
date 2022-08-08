@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+.center {
+  @apply flex justify-center items-center;
+}
+
+.header {
+  @apply bg-gray-700 p-4;
+}
+
+.header button {
+  @apply text-white p-2;
+}
+
+.active {
+  @apply bg-blue-500 text-white rounded rounded-md;
+}
+
+table {
+  @apply w-full my-2 border-2;
+}
+table th {
+  @apply text-xl text-gray-700 border-2;
+}
+table tbody {
+  max-height: 300px;
+}
+table tr {
+  @apply hover:bg-gray-100;
+}
+table td {
+  @apply px-4 py-2;
+}
+.edit-btn {
+  @apply bg-green-700
+          px-4
+          py-2
+          rounded
+          hover:bg-green-800
+          text-white;
+}
+.del-btn {
+  @apply bg-red-700
+            px-4
+            py-2
+            rounded
+            hover:bg-red-800
+            text-white;
+}
+
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.fade-enter-active {
+  animation: fade-in 0.5s;
+}
+.fade-leave-active {
+  animation: fade-in 0.5s reverse;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
