@@ -74,18 +74,38 @@ onBeforeMount(() => fetchRecords());
       <h1 class="text-center text-3xl font-bold text-red-700 my-4">
         Attendance
       </h1>
+
+      <!-- Search field -->
+      <fieldset class="border border-solid border-gray-300 p-3">
+        <legend>Search</legend>
+
+        <!-- Searchbox -->
+        <div class="border-2 p-2 w-60 flex items-center">
+          <input
+            type="text"
+            class="outline-none flex-1"
+            placeholder="Student ID or Name"
+          />
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+
+        <!-- Filter section -->
+      </fieldset>
+
       <div class="center hidden">
         <table>
           <thead>
+            <th>ID</th>
             <th>Student</th>
             <th>Course</th>
             <th>Section</th>
-            <th>Time</th>
+            <th>Time in</th>
             <th>Date</th>
             <th>Action</th>
           </thead>
           <tbody>
             <tr v-for="student in records" :key="student._id">
+              <td>{{ student.student?._id }}</td>
               <td>
                 {{
                   `${student.student?.lastname}, ${
