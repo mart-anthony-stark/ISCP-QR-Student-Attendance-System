@@ -7,7 +7,7 @@ type FileNameCallback = (error: Error | null, filename: string) => void;
 
 export const storage = multer.diskStorage({
   destination: (req: Request, file: any, cb: any) => {
-    cb(null, "images");
+    cb(null, "public/images");
   },
   filename: (req: any, file: any, cb: any) => {
     const filename = `${Date.now()}_${Math.floor(
