@@ -8,6 +8,7 @@ const cors = require("cors");
 
 const app: Application = express();
 app.use(cors({ origin: "*" }));
+app.use(express.static("public"))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
