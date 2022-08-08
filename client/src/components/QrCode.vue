@@ -36,12 +36,12 @@ const print = () => window.print();
   <div class="container">
     <div @click="$emit('onClose')" class="overlay"></div>
     <div id="capture" ref="imageRef" class="qr-container">
-      <qrcode-vue :value="value._id" :size="280"></qrcode-vue>
-      <h2 class="text-center font-bold text-red-800">
+      <qrcode-vue class="m-auto" :value="value._id" :size="280"></qrcode-vue>
+      <h2 class="text-center font-bold text-blue-800">
         {{ value.lastname }}, {{ value.firstname }}
         {{ value.middlename[0].toUpperCase() }}.
       </h2>
-      <h2 class="text-center font-bold text-red-800">
+      <h2 class="text-center font-bold text-blue-800">
         {{ value.course }} - {{ value.section }}
       </h2>
       <img
@@ -76,7 +76,7 @@ const print = () => window.print();
   transform: translateX(-50%);
 }
 .download-btn button {
-  @apply bg-red-800 hover:bg-red-700  px-4 py-2  text-white rounded;
+  @apply bg-blue-800 hover:bg-blue-700  px-4 py-2  text-white rounded;
 }
 @page {
   margin: 0;
