@@ -6,7 +6,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <nav class="header">
+  <nav class="header flex justify-between items-center">
     <div class="flex gap-4 items-center">
       <img
         id="cnsc-logo"
@@ -29,6 +29,7 @@ const route = useRoute();
         </button>
       </router-link>
     </div>
+    <button class="bg-red-500 rounded-lg hover:bg-red-4 00">Logout</button>
   </nav>
 </template>
 
